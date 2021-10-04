@@ -26,11 +26,13 @@
   }
 </style>
 <script>
+/*
 $(document).ready(function(){
   var baseUrl = "https://zoustec.github.io/three.js_demo/";
   var url = new URL(window.location.href);
   console.log(url);
   $('#ar').attr("url", "https://zoustec.github.io/three.js_demo/" + url.searchParams.get('a'));
+  */
 })
 </script>
 <body style="margin : 0px; overflow: hidden;">
@@ -52,7 +54,58 @@ $(document).ready(function(){
     <a-nft
 	  id="ar"
       type="nft"
-      url=""
+      url="three.js_demo/tree"
+      smooth="true"
+      smoothCount="10"
+      smoothTolerance=".01"
+      smoothThreshold="5"
+    >
+        <!-- as a child of the a-nft entity, you can define the content to show. here's a GLTF model entity -->
+        <a-entity
+            gltf-model="Cube.gltf"
+            scale="50 50 50"
+            position="200 -200 0"
+        >
+        </a-entity>
+    </a-nft>
+	<a-nft
+	  id="ar"
+      type="nft"
+      url="three.js_demo/well"
+      smooth="true"
+      smoothCount="10"
+      smoothTolerance=".01"
+      smoothThreshold="5"
+    >
+        <!-- as a child of the a-nft entity, you can define the content to show. here's a GLTF model entity -->
+        <a-entity
+            gltf-model="Cube.gltf"
+            scale="50 50 50"
+            position="200 -200 0"
+        >
+        </a-entity>
+    </a-nft>
+	<a-nft
+	  id="ar"
+      type="nft"
+      url="three.js_demo/elf"
+      smooth="true"
+      smoothCount="10"
+      smoothTolerance=".01"
+      smoothThreshold="5"
+    >
+        <!-- as a child of the a-nft entity, you can define the content to show. here's a GLTF model entity -->
+        <a-entity
+            gltf-model="Cube.gltf"
+            scale="50 50 50"
+            position="200 -200 0"
+        >
+        </a-entity>
+    </a-nft>
+	<a-nft
+	  id="ar"
+      type="nft"
+      url="three.js_demo/slope"
       smooth="true"
       smoothCount="10"
       smoothTolerance=".01"
