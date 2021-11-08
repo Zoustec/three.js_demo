@@ -38,13 +38,20 @@ $(document).ready(function(){
 
 
 <script>
-  AFRAME.registerComponent('markerhandler', {
+  AFRAME.registerComponent('tree', {
     init: function () {
       this.el.sceneEl.addEventListener('markerFound', () => {
-        console.log("markerFound");
+        // redirect to custom URL
+        console.log("tree");
       });
   });
-  },
+  AFRAME.registerComponent('well', {
+    init: function () {
+      this.el.sceneEl.addEventListener('markerFound', () => {
+        // redirect to custom URL
+        console.log("tree");
+      });
+  });
 </script>
 
 <body style="margin : 0px; overflow: hidden;">
@@ -53,10 +60,10 @@ $(document).ready(function(){
     <div>Loading, please wait...</div>
   </div>
 
-  <!-- renderer="logarithmicDepthBuffer: true;" -->
   <!-- a-frame scene -->
   <a-scene
     vr-mode-ui="enabled: false;"
+	renderer="logarithmicDepthBuffer: true;"
     embedded
     arjs="trackingMethod: best; sourceType: webcam;debugUIEnabled: false;"
   >
@@ -64,25 +71,25 @@ $(document).ready(function(){
     <!-- on 'url' use the path to the Image Descriptors created before. -->
     <!-- the path should end with the name without the extension e.g. if file is 'pinball.fset' the path should end with 'pinball' -->
     <a-nft
-	  id="ar"
+	  tree
       type="nft"
       url="three.js_demo/tree"
     >
     </a-nft>
 	<a-nft
-	  id="ar"
+	  well
       type="nft"
       url="three.js_demo/well"
     >
     </a-nft>
 	<a-nft
-	  id="ar"
+	  elf
       type="nft"
       url="three.js_demo/elf"
     >
     </a-nft>
 	<a-nft
-	  id="ar"
+	  slope
       type="nft"
       url="three.js_demo/slope"
     >
